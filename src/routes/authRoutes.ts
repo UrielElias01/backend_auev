@@ -1,5 +1,5 @@
 import {Router, RouterOptions} from "express";
-
+import { authController } from "../controllers/authController";
 
 class AuthRoutes{
 
@@ -11,9 +11,10 @@ class AuthRoutes{
     }
 
     config(){
-        this.router.get('/',(req,res)=>{
-            res.send('Invocando autenticacion')
-        })
+        // this.router.get('/',(req,res)=>{
+        //     res.send('Invocando Autenticacion')
+        // })
+        this.router.post('/',authController.iniciarSesion)
     }
 }
 
